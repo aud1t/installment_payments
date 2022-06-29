@@ -6,19 +6,23 @@ type Money int
 
 type Categories string
 
-const Smartphone Categories = "Smartphone"
-const Computer Categories = "Computer"
-const TV Categories = "TV"
+const (
+	Smartphone Categories = "Smartphone"
+	Computer   Categories = "Computer"
+	TV         Categories = "TV"
+)
+
+const (
+	SmartphonePercent = 3 // 3% на каждую дополнительную единицу диапазона для смартфона
+	ComputerPercent   = 4 // 4% на каждую дополнительную единицу диапазона для компьютера
+	TVPercent         = 5 // 5% на каждую дополнительную единицу диапазона для ТВ
+)
 
 // Product тип продукта
 type Product struct {
 	Price    Money
 	Category Categories
 }
-
-const SmartphonePercent = 3 // 3% на каждую дополнительную единицу диапазона для смартфона
-const ComputerPercent = 4   // 4% на каждую дополнительную единицу диапазона для компьютера
-const TVPercent = 5         // 3% на каждую дополнительную единицу диапазона для ТВ
 
 // FullPrice метод вычисляющая польную стоимость продукта
 func FullPrice(product Product, price Money, phoneNumber string, diapason int) (Money, error) {
