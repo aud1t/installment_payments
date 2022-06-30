@@ -24,7 +24,7 @@ type Product struct {
 	Category Categories
 }
 
-// FullPrice метод вычисляющая польную стоимость продукта
+// FullPrice функция вычисляющая польную стоимость продукта
 func FullPrice(product Product, price Money, phoneNumber string, diapason int) (Money, error) {
 	if price < 500 || price > 100_000 {
 		return 0, errors.New("Стоимость продукта должна быть больше 500 и меньше 100000 сомони")
